@@ -342,7 +342,7 @@ If HeyQ helped you automate websites with voice commands, please ⭐ star this r
 
 - **Issues:** [GitHub Issues](https://github.com/Ronaldozero7/HeyQ/issues)
 - **Discussions:** [GitHub Discussions](https://github.com/Ronaldozero7/HeyQ/discussions)
-- **Email:** [Your contact email]
+- **Email:** bhanuprakashj7@gmail.com
 
 ---
 
