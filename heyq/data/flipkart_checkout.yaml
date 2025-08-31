@@ -1,0 +1,10 @@
+base_url: https://www.flipkart.com
+product: iPhone 16 Pro
+payment:
+  card_number: card_number
+  card_name: card_name
+  card_exp: card_exp
+  card_cvv: card_cvv
+login:
+  username: flipkart_username
+  password: flipkart_password

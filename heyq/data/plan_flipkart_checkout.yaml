@@ -1,0 +1,9 @@
+steps:
+  - intent: navigate
+    entities:
+      site: https://www.flipkart.com
+  - intent: search
+    entities:
+      query: iPhone 16 Pro
+  - intent: add_to_cart
+  - intent: checkout

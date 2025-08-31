@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>HeyQ Web</title>
+		<style>
+			:root {
+				--bg: #ffffff;
+				--fg: #0f172a;
+				--muted: #64748b;
+				--primary: #2563eb;
+				--primary-ghost: rgba(37, 99, 235, 0.08);
+				--border: #e2e8f0;
+			}
+			* { box-sizing: border-box; }
+			body { margin: 0; font-family: -apple-system, system-ui, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; color: var(--fg); background: var(--bg); }
+			header { display:flex; align-items:center; justify-content:space-between; padding: 16px 24px; border-bottom: 1px solid var(--border); }
+			header .brand { font-weight: 700; letter-spacing: 0.2px; }
+			main { display:flex; align-items:center; justify-content:center; padding: 56px 16px; }
+			.hero { width: 100%; max-width: 880px; text-align: center; }
+			.title { font-size: clamp(28px, 5vw, 44px); font-weight: 800; margin: 0 0 16px; }
+			.subtitle { color: var(--muted); margin: 0 0 28px; }
+			.search { display:flex; align-items:center; gap: 10px; justify-content:center; }
+			.input { flex:1; max-width: 680px; display:flex; align-items:center; gap:8px; border: 1px solid var(--border); padding: 12px 14px; border-radius: 12px; box-shadow: 0 1px 2px rgba(0,0,0,0.04); }
+			.input input { flex: 1; border: none; outline: none; font-size: 16px; background: transparent; color: var(--fg); }
+			.chip { display:inline-flex; align-items:center; gap:6px; border:1px solid var(--border); padding:8px 10px; border-radius: 999px; color: var(--muted); cursor: default; }
+			.btn { appearance:none; border:none; outline:none; cursor:pointer; padding: 12px 16px; border-radius: 12px; font-size: 15px; font-weight: 600; }
+			.btn-primary { background: var(--primary); color:#fff; }
+			.btn-ghost { background: var(--primary-ghost); color: var(--primary); }
+			.btn-clear { background: rgba(239, 68, 68, 0.08); color: #dc2626; }
+			.btn-clear:hover { background: rgba(239, 68, 68, 0.12); }
+			.kbar { display:flex; gap: 8px; align-items:center; justify-content:center; margin-top: 16px; flex-wrap: wrap; }
+			.status { margin-top: 14px; color: var(--muted); min-height: 24px; white-space: pre-line; }
+			.verification { margin-top: 16px; padding: 16px; border: 1px solid var(--border); border-radius: 12px; background: #f8fafc; }
+			.verification-title { font-weight: 600; margin-bottom: 12px; color: var(--fg); }
+			.verification-item { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; padding: 8px; border-radius: 8px; background: white; }
+			.verification-item:last-child { margin-bottom: 0; }
+			.verification-icon { font-size: 16px; }
+			.verification-text { flex: 1; font-size: 14px; }
+			.verification-pass { border-left: 3px solid #10b981; }
+			.verification-fail { border-left: 3px solid #ef4444; }
+			.verification-info { border-left: 3px solid #6b7280; }
+			.transcript { margin-top: 10px; color: var(--fg); font-size: 14px; }
+			.transcript .label { color: var(--fg); font-weight: bold; margin-right: 6px; }
+			.transcript #heard { white-space: pre-line; line-height: 1.4; color: #2563eb; }
+			.listening { color: var(--primary); font-weight: 500; }
+			.interim-text { opacity: 0.7; font-style: italic; }
+			.final-text { opacity: 1; font-weight: 500; }
+			footer { padding: 24px; text-align:center; color: var(--muted); border-top: 1px solid var(--border); margin-top: 40px; }
+			.toggle { display:flex; align-items:center; gap:8px; }
+			.hidden { display:none; }
+		</style>
+	</head>
+	<body>
+		<header>
+			<div class="brand">HeyQ AI</div>
+			<div class="toggle">
+				<input id="useAI" type="checkbox" checked />
+				<label for="useAI">🤖 AI Enhanced</label>
+				<span style="width:12px"></span>
+				<input id="headed" type="checkbox" checked />
+				<label for="headed">Show browser</label>
+				<span style="width:8px"></span>
+				<label for="speed">Speed</label>
+						<select id="speed" aria-label="Playback speed" class="chip" style="padding:8px 10px">
+							<option value="0">Fast</option>
+							<option value="150">Slow</option>
+							<option value="300">Slower</option>
+							<option value="600">Very slow</option>
+							<option value="1000" selected>Ultra slow</option>
+							<option value="1500">Cinematic</option>
+							<option value="2000">Cinematic+</option>
+							<option value="3000">Max slow</option>
+						</select>
+			</div>
+		</header>
+		<main>
+			<div class="hero">
+				<h1 class="title">What flow to automate today?</h1>
+				<p class="subtitle">Say or type a flow like: "search for Python tutorials on YouTube", "visit amazon.com", or "open flipkart.com".</p>
+				<div class="search">
+					<div class="input">
+						<input id="product" placeholder="e.g., add to cart item, I want t-shirt, checkout flow" autocomplete="off" />
+					</div>
+					<button id="micBtn" class="btn btn-ghost" aria-label="Start voice input">🎙️</button>
+					<button id="cancelBtn" class="btn btn-ghost hidden" aria-label="Cancel voice command">❌</button>
+					<button id="clearBtn" class="btn btn-clear" aria-label="Clear prompt">Clear</button>
+					<button id="runBtn" class="btn btn-primary" disabled>Run</button>
+				</div>
+				<div id="status" class="status"></div>
+				<div id="verification" class="verification hidden">
+					<div class="verification-title">🧪 Test Results</div>
+					<div id="verification-details"></div>
+				</div>
+				<div id="transcript" class="transcript hidden">
+					<span class="label">Heard:</span>
+					<span id="heard"></span>
+				</div>
+				<div class="kbar">
+					<div class="chip">YouTube</div>
+					<div class="chip">Google</div>
+					<div class="chip">Amazon</div>
+					<div class="chip">Search</div>
+					<div class="chip">Navigate</div>
+				</div>
+			</div>
+		</main>
+		<footer>
+			<div>© 2025 HeyQ from Bhanu</div>
+		</footer>
+
+		<script src="/static/app.js"></script>
+	</body>
+	</html>

@@ -1,0 +1,31 @@
+# Core
+rich==13.7.1
+loguru==0.7.2
+tenacity==9.0.0
+PyYAML==6.0.2
+requests==2.32.3
+python-dotenv==1.0.1
+
+# Voice / STT
+SpeechRecognition==3.10.4
+pydub==0.25.1
+
+# AI/LLM Integration
+openai==1.51.0
+anthropic==0.34.2
+mcp==1.0.0
+
+# NLP - Enhanced with LLM fallback
+
+# Browser automation
+playwright==1.55.0
+# Security (local secrets)
+
+# Testing / Reporting
+pytest==8.3.2
+pytest-xdist==3.6.1
+pytest-html==4.1.1
+
+# Web App
+fastapi==0.115.6
+uvicorn[standard]==0.30.6
