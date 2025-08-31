@@ -1,0 +1,50 @@
+INFO:     Started server process [65881]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8082 (Press CTRL+C to quit)
+2025-08-31 23:56:29.400 | INFO     | __main__:hybrid_voice_automation:534 - 🎤 HYBRID VOICE COMMAND: 'open youtube search tseries' (headed=True, AI=True)
+2025-08-31 23:56:29.401 | INFO     | __main__:extract_target_url:427 - 🌐 UNIVERSAL URL EXTRACTION from: 'open youtube search tseries'
+2025-08-31 23:56:29.401 | INFO     | __main__:extract_target_url:431 - ✅ YouTube search pattern detected
+2025-08-31 23:56:29.401 | INFO     | __main__:hybrid_voice_automation:541 - 🎯 Target URL: https://youtube.com
+2025-08-31 23:56:29.401 | INFO     | __main__:execute_automation:244 - 🎯 Executing automation: 'open youtube search tseries' on https://youtube.com
+2025-08-31 23:56:29.401 | INFO     | __main__:start_visible_browser:49 - 🚀 Starting visible browser for user...
+2025-08-31 23:56:30.694 | INFO     | __main__:start_visible_browser:66 - ✅ Visible browser ready for automation
+2025-08-31 23:56:30.718 | INFO     | real_mcp_client:start_mcp_server:43 - ✅ Node.js found: v22.14.0
+2025-08-31 23:56:30.718 | INFO     | real_mcp_client:start_mcp_server:46 - 🚀 Starting Microsoft Playwright MCP server...
+2025-08-31 23:56:33.722 | INFO     | real_mcp_client:start_mcp_server:60 - ✅ Microsoft Playwright MCP server started successfully
+2025-08-31 23:56:33.723 | DEBUG    | real_mcp_client:send_mcp_request:161 - 📤 MCP Request: {"jsonrpc": "2.0", "method": "initialize", "params": {"protocolVersion": "2024-11-05", "capabilities": {"roots": {"listChanged": true}, "sampling": {}}, "clientInfo": {"name": "HeyQ-AI-MCP-Client", "version": "1.0.0"}}, "id": "req_1"}
+2025-08-31 23:56:33.731 | DEBUG    | real_mcp_client:send_mcp_request:181 - 📥 MCP Response: {'result': {'protocolVersion': '2024-11-05', 'capabilities': {'tools': {}}, 'serverInfo': {'name': 'Playwright', 'version': '0.0.35'}}, 'jsonrpc': '2.0', 'id': 'req_1'}
+2025-08-31 23:56:33.731 | INFO     | real_mcp_client:_initialize_mcp_session:102 - ✅ MCP initialize successful
+2025-08-31 23:56:33.731 | DEBUG    | real_mcp_client:send_mcp_notification:128 - 📤 MCP Notification: {"jsonrpc": "2.0", "method": "notifications/initialized", "params": {}}
+2025-08-31 23:56:33.731 | INFO     | real_mcp_client:start_mcp_server:65 - ✅ MCP session initialized successfully
+2025-08-31 23:56:33.731 | INFO     | __main__:analyze_voice_command:96 - 🧠 ANALYZING VOICE COMMAND: 'open youtube search tseries' -> normalized: 'open youtube search tseries'
+2025-08-31 23:56:33.733 | INFO     | __main__:analyze_voice_command:196 - 🔍 FINAL SEARCH TERM: 'tseries' from command: 'open youtube search tseries'
+2025-08-31 23:56:33.733 | INFO     | __main__:execute_automation:257 - 📍 Navigating to: https://youtube.com
+2025-08-31 23:56:38.278 | INFO     | __main__:perform_search:310 - 🔍 Searching for: tseries
+2025-08-31 23:56:42.330 | INFO     | __main__:perform_search:325 - ✅ Found search box with selector: input[placeholder*="search" i]
+2025-08-31 23:56:47.431 | INFO     | __main__:execute_automation:286 - ⏰ Complex flow: Keeping browser open for 8 seconds for user interaction...
+2025-08-31 23:56:55.599 | INFO     | __main__:execute_automation:303 - ✅ COMPLEX AUTOMATION TEST PASSED: Task completed successfully and browser auto-closed
+2025-08-31 23:56:55.599 | INFO     | __main__:analyze_voice_command:96 - 🧠 ANALYZING VOICE COMMAND: 'open youtube search tseries' -> normalized: 'open youtube search tseries'
+2025-08-31 23:56:55.599 | INFO     | __main__:analyze_voice_command:196 - 🔍 FINAL SEARCH TERM: 'tseries' from command: 'open youtube search tseries'
+2025-08-31 23:56:55.776 | INFO     | real_mcp_client:close:253 - ✅ MCP server shutdown complete
+🚀 Starting HYBRID AI+MCP+Playwright Voice Interface...
+📍 URL: http://127.0.0.1:8082
+🎤 Voice Command: 'search for Python tutorials on YouTube'
+👁️ You will see REAL browser automation happening!
+🤖 Best of both worlds: MCP AI + Visible Playwright
+INFO:     127.0.0.1:57376 - "POST /api/run HTTP/1.1" 200 OK
+2025-08-31 23:57:03.870 | INFO     | __main__:hybrid_voice_automation:534 - 🎤 HYBRID VOICE COMMAND: 'open amazon.in' (headed=True, AI=True)
+2025-08-31 23:57:03.870 | INFO     | __main__:extract_target_url:427 - 🌐 UNIVERSAL URL EXTRACTION from: 'open amazon.in'
+2025-08-31 23:57:03.870 | INFO     | __main__:extract_target_url:479 - ✅ Pattern 2 matched: 'amazon.in'
+2025-08-31 23:57:03.870 | INFO     | __main__:extract_target_url:494 - 🎯 FINAL EXTRACTED URL: 'https://amazon.in'
+2025-08-31 23:57:03.870 | INFO     | __main__:hybrid_voice_automation:541 - 🎯 Target URL: https://amazon.in
+2025-08-31 23:57:03.870 | INFO     | __main__:execute_automation:244 - 🎯 Executing automation: 'open amazon.in' on https://amazon.in
+2025-08-31 23:57:03.870 | INFO     | __main__:start_visible_browser:49 - 🚀 Starting visible browser for user...
+2025-08-31 23:57:05.144 | INFO     | __main__:start_visible_browser:66 - ✅ Visible browser ready for automation
+2025-08-31 23:57:05.144 | INFO     | __main__:analyze_voice_command:96 - 🧠 ANALYZING VOICE COMMAND: 'open amazon.in' -> normalized: 'open amazon.in'
+2025-08-31 23:57:05.144 | INFO     | __main__:execute_automation:257 - 📍 Navigating to: https://amazon.in
+2025-08-31 23:57:09.874 | INFO     | __main__:execute_automation:266 - ✅ Simple navigation completed to https://amazon.in
+2025-08-31 23:57:09.875 | INFO     | __main__:execute_automation:284 - ⚡ Simple flow: Keeping browser open for 5 seconds to verify...
+2025-08-31 23:57:15.123 | INFO     | __main__:execute_automation:301 - ✅ SIMPLE NAVIGATION TEST PASSED: Browser verified page load and auto-closed
+2025-08-31 23:57:15.123 | INFO     | __main__:analyze_voice_command:96 - 🧠 ANALYZING VOICE COMMAND: 'open amazon.in' -> normalized: 'open amazon.in'
+INFO:     127.0.0.1:57401 - "POST /api/run HTTP/1.1" 200 OK
